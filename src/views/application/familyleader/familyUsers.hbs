@@ -1,0 +1,51 @@
+<div>
+    <div class="container-fluid">
+        <div class="pt-4 row">
+            <div class="col col-12">
+                <div class="card shadow">
+                    <div class="card-header bg-dark p-4 rounded">
+                        <h2 class="text-center text-light">Family Users</h2>
+                        <div class="d-flex">
+                            <button type="button" data-toggle="modal" data-target="#addFamilyuserModal"
+                                class="btn btn-light btn-block btn-sm d-none d-md-block d-lg-block d-xl-block ml-auto mt-3">
+                                <i class="fa fa-user-plus" aria-hidden="true"></i> New family user
+                            </button>
+                        </div>
+                        <button type="button" data-toggle="modal" data-target="#addFamilyuserModal"
+                            class="btn btn-light btn-block btn-sm d-lg-none d-md-none d-xl-none ml-auto mt-3">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i> New family user
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-md-center aling-items-center p-4">
+                {{#each familyusers}}
+                <div class="col col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
+                    <div class="card shadow text-center h-100 rounded">
+                        <div class="card-header bg-dark text-white">
+                            <i class="fa fa-user-circle fa-5x mb-2" aria-hidden="true"></i>
+                            <h5 class="font-weight-bold text-white text-center">{{name}} {{lastname}}</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="h6">Email: <span class="text-muted">{{email}}</span></p>
+                            <p class="h6">Family code: <span class="text-muted">{{familycode}}</span></p>
+                        </div>
+                        <div class="card-footer ">
+                            <button type="button" data-toggle="modal" data-target="#editFamilyuserModal{{familyusers}}" class="btn btn-success px-3"><i class="fas fa-pencil-alt"></i></button>
+                            <button type="button" data-toggle="modal" data-target="#deleteFamilyuserModal{{id}}" class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                {{>familyuserPartials/familyusersModals/editFamilyuserModal}}
+                {{>familyuserPartials/familyusersModals/deleteFamilyuserModal}}
+                {{else}}
+                <h1 class="text-center mt-4">You have no family users added<br>
+                    <small>Add a new user :D</small>
+                </h1>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{>familyuserPartials/familyusersModals/addFamilyuserModal}}

@@ -8,12 +8,12 @@
                         <div class="d-flex">
                             <button type="button" data-toggle="modal" data-target="#addTaskModal"
                                 class="btn btn-light btn-block btn-sm d-none d-md-block d-lg-block d-xl-block ml-auto mt-3">
-                                <i class="fa fa-plus" aria-hidden="true"></i>New task
+                                <i class="fa fa-plus" aria-hidden="true"></i> New task
                             </button>
                         </div>
                         <button type="button" data-toggle="modal" data-target="#addTaskModal"
                             class="btn btn-light btn-block btn-sm d-lg-none d-md-none d-xl-none ml-auto mt-3">
-                            <i class="fa fa-plus" aria-hidden="true"></i>New task
+                            <i class="fa fa-plus" aria-hidden="true"></i> New task
                         </button>
                     </div>
                 </div>
@@ -47,6 +47,10 @@
                 </div>
                 {{>familyuserPartials/tasksModals/completeTaskModal}}
                 {{>familyuserPartials/tasksModals/deleteTaskModal}}
+                {{else}}
+                <h1 class="text-center mt-4">You have no added tasks<br>
+                    <small>Add a new task :D</small>
+                </h1>
                 {{/each}}
             </div>
         </div>
