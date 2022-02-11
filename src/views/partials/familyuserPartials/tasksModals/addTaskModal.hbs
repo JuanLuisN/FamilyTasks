@@ -1,0 +1,36 @@
+<div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ADD TASK</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/addTask" method="POST">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <input type="text" name="title" placeholder="Title" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <textarea name="body" cols="30" rows="5" placeholder="Body" class="form-control" required></textarea>
+          </div>
+          <div class="form-group" required>
+            <label for="importance">Importance</label>
+            <select name="importance" class="form-control">
+              <option value="Normal">Normal</option>
+              <option value="Important">Important</option>
+              <option value="Very Important">Very Important</option>
+            </select>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-dark">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

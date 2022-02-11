@@ -1,0 +1,58 @@
+<div>
+    <div class="container-fluid">
+        <div class="pt-4 row">
+            <div class="col col-12">
+                <div class="card shadow">
+                    <div class="card-header bg-dark p-4">
+                        <h2 class="text-center text-light">Uncompleted Tasks</h2>
+                        <div class="d-flex">
+                            <button type="button" data-toggle="modal" data-target="#addTaskModal"
+                                class="btn btn-light btn-block btn-sm d-none d-md-block d-lg-block d-xl-block ml-auto mt-3">
+                                <i class="fa fa-plus" aria-hidden="true"></i>New task
+                            </button>
+                        </div>
+                        <button type="button" data-toggle="modal" data-target="#addTaskModal"
+                            class="btn btn-light btn-block btn-sm d-lg-none d-md-none d-xl-none ml-auto mt-3">
+                            <i class="fa fa-plus" aria-hidden="true"></i>New task
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-md-center aling-items-center p-4">
+                {{#each tasks}}
+                <div class="col col-12 col-sm-12 col-md-4 col-lg-4 mb-4">
+                    <div class="card shadow text-center h-100">
+                        {{#if (isNormal importance)}}
+                        <div class="card-header bg-success text-white">
+                            <h5 class="font-weight-bold">{{title}}</h5>
+                            <i><small class="font-weight-bold text-white">{{timeago created_at}}</small></i>
+                        </div>
+                        {{/if}}
+                        {{#if (isImportant importance)}}
+                        <div class="card-header bg-warning">
+                            <h5 class="font-weight-bold text-white">{{title}}</h5>
+                            <i><small class="font-weight-bold text-white">{{timeago created_at}}</small></i>
+                        </div>
+                        {{/if}}
+                        {{#if (isVeryImportant importance)}}
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="font-weight-bold">{{title}}</h5>
+                            <i><small class="font-weight-bold text-white">{{timeago created_at}}</small></i>
+                        </div>
+                        {{/if}}
+                        <div class="card-body">
+                            <p class="h6">{{body}}</p>
+                        </div>
+                        <div class="card-footer ">
+                            <a href="" class="btn btn-success px-3"><i class="fa fa-check" aria-hidden="true"></i></a>
+                            <a href="" class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{>user/addTaskModal}}

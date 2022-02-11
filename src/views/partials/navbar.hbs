@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><h3>FamilyTasks</h3></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                {{#if (isFamilyuserOrFamilyleader user)}}
+                <li class="nav-item">
+                    <a class="nav-link mr-2" href="/tasks"><i class="fa fa-tasks" aria-hidden="true"></i> Tasks</a>
+                </li>
+                {{/if}}
+                {{#if (isFamilyLeader user)}}
+                <li class="nav-item">
+                    <a class="nav-link mr-2" href="/familyusers"><i class="fa fa-users" aria-hidden="true"></i> Family users</a>
+                </li>
+                {{/if}}
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i> {{user.name}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+                        <a class="dropdown-item" href="/profile"><i class="fa fa-address-book" aria-hidden="true"></i> Profile</a>
+                        <a class="dropdown-item" href="/logout"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Log out</a>
+                    </div>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link mr-2" href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-2" href="#"><i class="fa fa-book" aria-hidden="true"></i> Instructions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-2" href="#"><i class="fa fa-play" aria-hidden="true"></i> Start</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i> Login
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/signin"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Sign in</a>
+                        <a class="dropdown-item" href="/signup"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Sign up</a>
+                    </div>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+
+</nav>

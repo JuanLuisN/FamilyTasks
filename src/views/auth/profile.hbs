@@ -1,0 +1,22 @@
+<div class="container p-4">
+    <div class="row justify-content-md-center align-items-center">
+        <div class="col col-md-4 mx-center">
+            <div class="card shadow text-center">
+                <div class="card-header">
+                    <span class="font-weight-bold">Profile</span>
+                </div>
+                <div class="card-body">
+                    <h3>Welcome {{user.name}}</h3>
+                    <hr>
+                    <p><span class="font-weight-bold">Full name:</span> {{user.name}} {{user.lastname}}</p>
+                    <p><span class="font-weight-bold">Email:</span> {{user.email}}</p>
+                    <p><span class="font-weight-bold">Family code:</span> {{user.familycode}}</p>
+                    <hr>
+                    <a href="/taks" class="btn btn-dark btn-block">
+                        Save your tasks
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
