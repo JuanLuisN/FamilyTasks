@@ -1,0 +1,16 @@
+<div class="modal fade" id="completeTaskModal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p class="text-center">
+                    Has the task been completed successfully?<br>
+                    <small class="bg-danger rounded text-white p-2">Once completed, there is no going back</small>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <a href="/tasks/edit/{{id}}" class="btn btn-success">Completed</a>
+            </div>
+        </div>
+    </div>
+</div>

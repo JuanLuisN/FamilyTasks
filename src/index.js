@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 
 //Routes
 app.use(require('./routes/landinPage.routes'))
-app.use(require('./routes/user/tasks.routes'))
+app.use(require('./routes/applicationRoutes/tasks.routes'))
 app.use(require('./routes/auth.routes'))
 app.use(require('./routes/profile.routes'))
 
