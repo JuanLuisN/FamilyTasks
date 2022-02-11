@@ -42,4 +42,16 @@ controller.CompleteTask = async (req, res) => {
     }
 }
 
+controller.DeleteTask = async (req, res) => {
+    const { id } = req.params
+    try {
+        await connection.query(`delete from tasks where id = ${id}`)
+        req.flash('success', 'The task deleted successfully')
+        res.redirect(redirectPath)
+    } catch (error) {
+        console.log(error)
+        req.flash('danger', 'Something went wrong. Try again')
+    }
+}
+
 module.exports = controller

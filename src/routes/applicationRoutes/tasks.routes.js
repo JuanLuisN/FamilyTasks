@@ -7,5 +7,6 @@ const familyTasks = require('../../controllers/applicationControllers/familyuser
 router.get('/tasks', authMiddleware.isLoggedIn, familyTasks.renderFamilyTasks)
 router.post('/tasks/add', authMiddleware.isLoggedIn, familyTasks.SaveTask)
 router.get('/tasks/edit/:id', authMiddleware.isLoggedIn, familyTasks.CompleteTask)
+router.get('/tasks/delete/:id', authMiddleware.isLoggedIn, familyTasks.DeleteTask)
 
 module.exports = router

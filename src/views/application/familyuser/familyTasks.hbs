@@ -41,11 +41,12 @@
                         </div>
                         <div class="card-footer ">
                             <button type="button" data-toggle="modal" data-target="#completeTaskModal{{id}}" class="btn btn-success px-3"><i class="fa fa-check" aria-hidden="true"></i></button>
-                            <a href="" class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                            <button type="button" data-toggle="modal" data-target="#deleteTaskModal{{id}}" class="btn btn-danger px-3"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
                 {{>familyuserPartials/tasksModals/completeTaskModal}}
+                {{>familyuserPartials/tasksModals/deleteTaskModal}}
                 {{/each}}
             </div>
         </div>
