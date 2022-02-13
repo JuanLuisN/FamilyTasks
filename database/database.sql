@@ -1,9 +1,9 @@
-//Database scripts
-
 CREATE DATABASE familytasks;
 
 USE familytasks;
 
+ALTER TABLE tasks
+	ADD created_at TIMESTAMP NOT NULL DEFAULT current_timestamp;
 CREATE TABLE roles(
     id INT PRIMARY KEY AUTO_INCREMENT,
     namerole VARCHAR(50)
@@ -17,7 +17,7 @@ CREATE TABLE users(
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100),
     lastname VARCHAR(100),
-    familycode INT NOT NULL, //It has to be assigned as a key.
+    familycode INT NOT NULL,
     email VARCHAR(100),
     password VARCHAR(60),
     fk_rol INT,
@@ -29,7 +29,7 @@ CREATE TABLE tasks(
     title VARCHAR(100),
     body TEXT,
     importance VARCHAR(100),
-    status VARCHAR(100),
+    status varchar(100),
     fk_familycode INT,
-    FOREIGN KEY(fk_familycode)REFERENCES users(familycode)
-);
+    FOREIGN KEY(fk_familycode)REFERENCES users(familycode),
+	 created_at TIMESTAMP NOT NULL DEFAULT current_timestamp);
